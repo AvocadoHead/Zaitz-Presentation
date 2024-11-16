@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .parallax-container {
+            height: 800vh;
+            perspective: 1px;
+            transform-style: preserve-3d;
+            overflow-x: hidden;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        .background-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 800vh;
+            transform: translateZ(-1px) scale(2);
+            z-index: 1;
+        }
+
+        .background-image {
+            position: absolute;
+            width: 100%;
+            height: 200vh;
+            object-fit: cover;
+        }
+
+        .background-image:nth-child(1) { top: 0; }
+        .background-image:nth-child(2) { top: 200vh; }
+        .background-image:nth-child(3) { top: 400vh; }
+        .background-image:nth-child(4) { top: 600vh; }
+
+        .content-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+        }
+
+        .text-content {
+            width: 33%;
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 2rem;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            margin-right: 50%;
+        }
+
+        .media-content {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 40%;
+            max-height: 60vh;
+            z-index: 3;
+        }
+
+        .media-content video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 50vh;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            border-radius: 1.5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: white;
+            height: 0%;
+            transition: height 0.1s;
+            border-radius: 1.5px;
+        }
+
+        .paragraph {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: normal;
+            margin-top: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .text-content {
+                width: 80%;
+                margin: 0;
+                font-size: clamp(1.2rem, 4vw, 2rem);
+            }
+
+            .media-content {
+                position: fixed;
+                right: 50%;
+                transform: translate(50%, -50%);
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="parallax-container" id="container">
+        <div class="background-layer">
+            <img src="https://lh3.googleusercontent.com/d/1G_XTDjPhJJF84mDyMBUP9EyGKAlxZWbs" alt="" class="background-image" loading="eager">
+            <img src="https://lh3.googleusercontent.com/d/1Kc75EBM0VUGFgdqmhkxVt6D_GcaVH-54" alt="" class="background-image" loading="eager">
+            <img src="https://lh3.googleusercontent.com/d/1yPVSn8Bb4tdnuZACt-8BAREe9APTWJxi" alt="" class="background-image" loading="eager">
+            <img src="https://lh3.googleusercontent.com/d/1O1iWVRKWyIVCps4pLB3gfRW1TtpNElmP" alt="" class="background-image" loading="eager">
+        </div>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+	        <section class="content-section">
+            <div class="text-content">
+                Welcome to the Future of OPEN
+                <p class="paragraph">Embracing innovation and transparency in the digital age.</p>
+	        <p class="paragraph">As we stand at the threshold of a transformative era in creative and design work, the integration of AI isn't just an option – it's becoming a fundamental necessity. </p>
+                <p class="paragraph">Our industry is experiencing unprecedented change, with AI tools reshaping how we ideate, create, and deliver. </p>
+                <p class="paragraph">This isn't about replacing human creativity – it's about augmenting it. </p>
+                <p class="paragraph">As Head of AI, I'm here to guide us through this evolution, ensuring we remain at the forefront of innovation while staying true to our core creative values.</p>
+            </div>
+            <div class="media-content">
+                <video autoplay loop muted playsinline>
+                    <source src="Animation/OPEN Logo Robert Indiana Tribute.webm" type="video/webm"> <!-- Correct path to the first animation -->
+                </video>
+            </div>
+        </section>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+        <section class="content-section">
+            <div class="text-content">
+                Innovation and Motivation Feedback Loops
+                <p class="paragraph">Creating powerful systems that drive continuous improvement.</p>
+                <p class="paragraph">The journey of integrating AI into our workflow follows a fascinating pattern I call the Innovation-Motivation Loop</p>
+                <p class="paragraph">It typically begins with that singular "Aha!" moment – when you first experience how AI can transform a tedious task into an elegant solution, or when it helps you achieve something you thought impossible. This initial success sparks curiosity and builds confidence, naturally motivating you to explore further applications. As you discover new tools and techniques, each small victory fuels the desire to find even more innovative solutions. Soon, you're not just using AI tools – you're actively seeking out new technologies and creatively applying them to challenges you might not have considered before</p>
+                <p class="paragraph">This creates a powerful, self-reinforcing cycle: success breeds motivation, motivation drives exploration, and exploration leads to more success</p>
+            </div>
+            <div class="media-content">
+                <video autoplay loop muted playsinline>
+                    <source src="Animation/sub.webm" type="video/webm"> <!-- Correct path to sub.webm -->
+                </video>
+            </div>
+        </section>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+        <section class="content-section">
+            <div class="text-content">
+                Embracing Change
+                <p class="paragraph">Adapting and evolving in an ever-changing landscape.</p>
+                <p class="paragraph">The creative industry is experiencing a seismic shift, with our competitors rapidly adopting AI technologies in their workflows. However, our position as an established studio with deep industry expertise gives us a unique advantage in this transformation.</p>
+                <p class="paragraph">While others are just beginning to experiment with AI, we can integrate these tools thoughtfully and strategically, building upon our proven methodologies and high standards.</p>
+                <p class="paragraph">By embracing AI now, we're not just keeping pace – we're setting ourselves up to excel.</p>
+                <p class="paragraph">This technology will accelerate our production timelines, enhance our creative output, and allow us to tackle more ambitious projects while maintaining our trademark quality. Most importantly, it will free our talented team from repetitive tasks, creating space for more meaningful creative work and innovation.</p>
+                <p class="paragraph">We're not just adapting to change – we're leveraging it to redefine what's possible in our industry.</p>
+
+            </div>
+            <div class="media-content">
+                <video autoplay loop muted playsinline>
+                    <source src="Animation/DrinkBird.webm" type="video/webm"> <!-- Correct path to DrinkBird.webm -->
+                </video>
+            </div>
+        </section>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+        <section class="content-section">
+            <div class="text-content">
+                The Future is Bright
+                <p class="paragraph">Building tomorrow's solutions with today's innovations.</p>
+                <p class="paragraph">We're standing at an extraordinary moment where AI tools aren't just becoming more powerful – they're becoming more customizable and accessible. This means we can go beyond using off-the-shelf solutions to actually crafting our own AI-powered tools that perfectly align with our unique workflows and creative vision.</p>
+                <p class="paragraph">Imagine AI agents specifically trained on our brand voice, design principles, and project requirements. We can develop custom solutions that automate our routine tasks, enhance our creative processes, and even predict project needs before they arise.</p>
+                <p class="paragraph">Whether it's creating specialized design assistants, developing smart project management systems, or building AI-powered quality control tools, we have the opportunity to shape these technologies to our exact specifications.</p>
+                <p class="paragraph">The best part? As these tools learn and evolve with us, they become an integral part of our creative DNA, giving us capabilities that our competitors simply can't match.</p>
+                <p class="paragraph">We're not just keeping pace with the future – we're actively building it, one innovation at a time.</p>
+            </div>
+            <div class="media-content">
+                <video autoplay loop muted playsinline>
+                    <source src="Animation/Fractured Couples.mp4" type="video/mp4"> <!-- Correct path to Fractured Couples.mp4 -->
+                </video>
+        </section>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+        <section class="content-section">
+            <div class="text-content">
+                Everyone On Board
+                <p class="paragraph">It won't take Your job but You should definetly get it to work FOR You</p>
+                <p class="paragraph">AI isn't a one-size-fits-all solution – it's a highly personal toolkit that each of us can customize to enhance our unique strengths and shore up our individual challenges. </p>
+                <p class="paragraph">Whether you're a designer looking to rapidly prototype concepts, a copywriter seeking to overcome writer's block, an accountant streamlining financial reports, or an executive needing faster data analysis, there's an AI application that can transform your daily workflow. </p>
+                <p class="paragraph">The key is identifying those small pain points in your process – the tasks that drain your energy, the repetitive work that slows you down, or the creative blocks that frustrate you – and finding the right AI tool to address them.</p>
+                <p class="paragraph">When each team member discovers their own "AI sweet spot," the collective impact is remarkable: designers spend more time on creative exploration, writers focus on crafting compelling narratives, and project managers deliver faster turnarounds.</p>
+                <p class="paragraph">This isn't about replacing anyone's role – it's about giving everyone a powerful assistant that works on their terms, freeing up time and mental space for what truly matters: innovation, creativity, and excellence.</p>
+             </div>
+ <div class="media-content">
+                <video autoplay loop muted playsinline>
+                    <source src="Animation/OPEN Structure Animation.webm" type="video/webm"> <!-- Correct path to OPEN Structure Animation.webm -->
+                </video>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('container');
+            const progressBar = document.getElementById('progressBar');
+            const videos = document.querySelectorAll('video');
+            let ticking = false;
+
+            function updateProgress() {
+                const scrollPercentage = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+                progressBar.style.height = `${scrollPercentage}%`;
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateProgress);
+                    ticking = true;
+                }
+            }
+
+            container.addEventListener('scroll', requestTick, { passive: true });
+
+            videos.forEach(video => {
+                video.addEventListener('error', () => {
+                    const currentSrc = video.querySelector('source').src;
+                    video.querySelector('source').src = currentSrc;
+                    video.load();
+                });
+
+                video.play().catch(error => {
+                    console.log("Video autoplay failed:", error);
+                });
+
+                video.addEventListener('loadeddata', () => {
+                    if (video.readyState >= 2) {
+                        video.style.opacity = '1';
+                    }
+                });
+            });
+
+            const images = document.querySelectorAll('.background-image');
+            images.forEach(img => {
+                if (img.complete) return;
+                img.onload = () => img.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
