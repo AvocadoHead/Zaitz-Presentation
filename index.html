@@ -91,6 +91,16 @@
             object-fit: contain;
         }
 
+.large-video .media-content {
+  max-width: 80%; /* Double the width */
+  max-height: 120vh; /* Double the height */
+}
+
+.large-video .media-content video {
+  width: 100%;
+  height: 100%;
+}
+
         .scroll-progress {
             position: fixed;
             right: 20px;
@@ -147,10 +157,6 @@
             <img src="https://lh3.googleusercontent.com/d/1yPVSn8Bb4tdnuZACt-8BAREe9APTWJxi" alt="" class="background-image" loading="eager">
             <img src="https://lh3.googleusercontent.com/d/1O1iWVRKWyIVCps4pLB3gfRW1TtpNElmP" alt="" class="background-image" loading="eager">
         </div>
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
 	        <section class="content-section">
             <div class="text-content">
                 Welcome to the Future of OPEN
@@ -166,8 +172,6 @@
                 </video>
             </div>
         </section>
-<br class="spacer">
-<br class="spacer">
         <section class="content-section">
             <div class="text-content">
                 Who Am I? Why AI?
@@ -185,8 +189,6 @@
                 </video>
             </div>
         </section>
-<br class="spacer">
-<br class="spacer">
 <br class="spacer">
 <br class="spacer">
 <br class="spacer">
@@ -210,7 +212,6 @@
 <br class="spacer">
 <br class="spacer">
 <br class="spacer">
-<br class="spacer">
         <section class="content-section">
             <div class="text-content">
                 Embracing Change
@@ -228,15 +229,6 @@
                 </video>
             </div>
         </section>
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
 <br class="spacer">
 <br class="spacer">
 <br class="spacer">
@@ -267,14 +259,6 @@
 <br class="spacer">
 <br class="spacer">
 <br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
-<br class="spacer">
         <section class="content-section">
             <div class="text-content">
                 Everyone On Board
@@ -285,12 +269,18 @@
                 <p class="paragraph">When each team member discovers their own "AI sweet spot," the collective impact is remarkable: designers spend more time on creative exploration, writers focus on crafting compelling narratives, and project managers deliver faster turnarounds.</p>
                 <p class="paragraph">This isn't about replacing anyone's role – it's about giving everyone a powerful assistant that works on their terms, freeing up time and mental space for what truly matters: innovation, creativity, and excellence.</p>
              </div>
- <div class="media-content">
-                <video autoplay loop muted playsinline>
-                    <source src="Animation/OPEN Structure Animation.webm" type="video/webm"> <!-- Correct path to OPEN Structure Animation.webm -->
-                </video>
-            </div>
         </section>
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+<br class="spacer">
+ <section class="content-section large-video">
+  <div class="media-content">
+    <video autoplay loop muted playsinline>
+      <source src="Animation/OPEN Structure Animation.webm" type="video/webm">
+    </video>
+  </div>
+</section>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
